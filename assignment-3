@@ -1,0 +1,193 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPDjOAuO2Qex/r9pI1BfazL"
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "yvDg27XGpJBs"
+      },
+      "outputs": [],
+      "source": [
+        "#1. Numpy:\n",
+        "import numpy as np\n",
+        "x = np.random.randint(1,20, size = 15)\n",
+        "print (x)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 1. Reshape the array to 3 by 5\n",
+        "y=x.reshape(3,5)\n",
+        "print(y)"
+      ],
+      "metadata": {
+        "id": "8wc2zt4NpM9_"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 2. Print array shape.\n",
+        "print(\"array is :\",y)\n",
+        "print (\"array shape is:\",y.shape)"
+      ],
+      "metadata": {
+        "id": "c8vM1ro7pSEq"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 3. Replace the max in each row by 0\n",
+        "new_a = np.where(y == [\n",
+        "    [i]\n",
+        "    for i in np.amax(y, axis = 1)\n",
+        "], 0, y)\n",
+        "\n",
+        "print(new_a)"
+      ],
+      "metadata": {
+        "id": "QjNYzJxzpTDo"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Create a 2-dimensional array of size 4 x 3 (composed of 4-byte integer elements), also print the shape, type and data type\n",
+        "#of the array.\n",
+        "import numpy as np\n",
+        "\n",
+        "# create a 2-dimensional array of size 4x3\n",
+        "arr = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]], dtype=np.int32)\n",
+        "\n",
+        "# print the array shape\n",
+        "print(\"Array shape:\", arr.shape)\n",
+        "\n",
+        "# print the array type\n",
+        "print(\"Array type:\", type(arr))\n",
+        "\n",
+        "# print the array data type\n",
+        "print(\"Array data type:\", arr.dtype)"
+      ],
+      "metadata": {
+        "id": "5Q3E-kzxpW_I"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#1(b) Write a program to compute the eigenvalues and right eigenvectors\n",
+        "import numpy as np\n",
+        "\n",
+        "# define the square array\n",
+        "A = np.array([[3, -2], [1, 0]])\n",
+        "\n",
+        "# compute the eigenvalues and right eigenvectors\n",
+        "eigenvalues, eigenvectors = np.linalg.eig(A)\n",
+        "\n",
+        "# print the eigenvalues and right eigenvectors\n",
+        "print(\"Eigenvalues:\", eigenvalues)\n",
+        "print(\"Right eigenvectors:\")\n",
+        "print(eigenvectors)"
+      ],
+      "metadata": {
+        "id": "jIStAY9Cpang"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#1(c)Compute the sum of the diagonal element of a given array.\n",
+        "import numpy as np\n",
+        "\n",
+        "# define the array\n",
+        "A = np.array([[0, 1, 2], [3, 4, 5]])\n",
+        "\n",
+        "# compute the sum of the diagonal elements\n",
+        "diagonal_sum = np.trace(A)\n",
+        "\n",
+        "# print the sum of the diagonal elements\n",
+        "print(\"Sum of diagonal elements:\", diagonal_sum)"
+      ],
+      "metadata": {
+        "id": "Unn0CdrBpeE8"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#1(d)Write a NumPy program to create a new shape to an array without changing its data. \n",
+        "import numpy as np\n",
+        "\n",
+        "# define the original array\n",
+        "arr = np.array([[1, 2], [3, 4], [5, 6]])\n",
+        "\n",
+        "# reshape to 3x2\n",
+        "arr_3x2 = arr.reshape(3, 2)\n",
+        "\n",
+        "# reshape to 2x3\n",
+        "arr_2x3 = arr.reshape(2, 3)\n",
+        "\n",
+        "print(\"Reshaped to 3x2:\\n\", arr_3x2)\n",
+        "print(\"Reshaped to 2x3:\\n\", arr_2x3)"
+      ],
+      "metadata": {
+        "id": "gichc-vXphBE"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Question2 Write a Python programming to create a below chart of the popularity of programming Languages.\n",
+        "import matplotlib.pyplot as plt\n",
+        "# Data to plot\n",
+        "languages = 'Java', 'Python', 'PHP', 'JavaScript', 'C#', 'C++'\n",
+        "popuratity = [22.2, 17.6, 8.8, 8, 7.7, 6.7]\n",
+        "colors = [\"#1f77b4\", \"#ff7f0e\", \"#2ca02c\", \"#d62728\", \"#9467bd\", \"#8c564b\"]\n",
+        "# explode 1st slice\n",
+        "explode = (0.1, 0, 0, 0,0,0)  \n",
+        "# Plot\n",
+        "plt.pie(popuratity, explode=explode, labels=languages, colors=colors,\n",
+        "autopct='%1.1f%%', shadow=True, startangle=140)\n",
+        "\n",
+        "plt.axis('equal')\n",
+        "plt.show()"
+      ],
+      "metadata": {
+        "id": "L3Uioer2pjd4"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
